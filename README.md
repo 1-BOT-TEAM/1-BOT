@@ -11,6 +11,8 @@
 ```sh
 yarn install
 ```
+Next Rename example.env to .env
+edit .env 
 
 ### Development
 

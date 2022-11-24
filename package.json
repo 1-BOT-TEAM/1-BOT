@@ -2,7 +2,7 @@
   "name": "1-bot",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "author": "@DemuraAIDev",
+  "author": "@1-BOT-TEAM",
   "license": "UNLICENSE",
   "dependencies": {
     "@sapphire/decorators": "^5.0.0",
