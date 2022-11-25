@@ -1,7 +1,6 @@
 import './lib/setup';
 import { NeroClient } from './Nero/NeroClient';
 import { ClientOpt } from './config/Config';
-import { envParseString } from './lib/env-parser';
 
 const client = new NeroClient(ClientOpt);
 
@@ -14,4 +13,4 @@ process.on('uncaughtException', (e) => {
 	process.exit(1);
 });
 
-client.main(envParseString('DISCORD_TOKEN'));
+client.main(process.env.DISCORD_TOKEN);
