@@ -1,6 +1,6 @@
 # 1-BOT SOURCE CODE
 
-1-BOT using NERO CLIENT 
+1-BOT using NERO CLIENT v1
 
 
 
