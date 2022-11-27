@@ -4,6 +4,13 @@
   "main": "dist/index.js",
   "author": "@1-BOT-TEAM",
   "license": "UNLICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1-BOT-TEAM/1-BOT"
+  },
+  "bugs": {
+    "url": "https://github.com/1-BOT-TEAM/1-BOT/issues"
+  },
   "dependencies": {
     "@sapphire/decorators": "^5.0.0",
     "@sapphire/discord-utilities": "^2.11.6",

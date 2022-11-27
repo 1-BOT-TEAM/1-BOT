@@ -6,6 +6,6 @@ import type { Guild } from 'discord.js';
 @ApplyOptions<ListenerOptions>({})
 export class UserEvent extends Listener<typeof Events.GuildCreate> {
 	public async run(guild: Guild) {
-		this.container.logger.info(`Joined ${guild.name} (${guild.id})`);
+		this.container.logger.info(`Left ${guild.name} (${guild.id})`);
 	}
 }

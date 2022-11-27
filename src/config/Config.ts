@@ -6,8 +6,9 @@ export const ClientOpt: ClientOptions = {
 	defaultPrefix: '1!',
 	regexPrefix: /^(hey +)?bot[,! ]/i,
 	caseInsensitiveCommands: true,
+	loadDefaultErrorListeners: false,
 	logger: {
-		level: LogLevel.Debug
+		level: process.env.NODE_ENV === 'development' ? LogLevel.Debug : LogLevel.Info
 	},
 	shards: 'auto',
 	intents: [
@@ -27,6 +28,6 @@ export const ClientOpt: ClientOptions = {
 
 export const PresenceStatus = {
 	status: 'online' as ClientPresenceStatus,
-	activities: ["1!help | I'm a bot made by Nero"],
+	activities: ['Developer', 'Discord Bot', 'Discord.js', 'JavaScript', 'TypeScript'],
 	interval: 10000
 };

@@ -9,7 +9,6 @@ class NeroClient extends SapphireClient {
 	constructor(option: ClientOptions) {
 		super(option);
 	}
-
 	public async main(token: string): Promise<NeroClient> {
 		this.logger.info('Starting NeroClient...');
 		this.logger.info('Logging in');
