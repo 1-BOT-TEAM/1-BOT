@@ -2,7 +2,7 @@ import { ApplyOptions } from '@sapphire/decorators';
 import { Args, Command } from '@sapphire/framework';
 import type { Message } from 'discord.js';
 import { MessageEmbed } from 'discord.js';
-import { getWeather } from '../../lib/weather';
+import { getWeather } from '../../lib/api/weather';
 @ApplyOptions<Command.Options>({
 	aliases: ['weth'],
 	description: 'Get the weather for a location',
