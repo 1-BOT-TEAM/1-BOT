@@ -7,16 +7,18 @@ import { getWeather } from '../../lib/api/weather';
 	aliases: ['weth'],
 	description: 'Get the weather for a location',
 	quotes: [],
-	options: ['location'],
+	options: ['location']
 })
 export class UserCommand extends Command {
 	public override registerApplicationCommands(registry: Command.Registry) {
 		registry.registerChatInputCommand((builder) =>
-			builder.setName(this.name).setDescription(this.description).addStringOption((option) =>
-				option.setName('location').setDescription('The location to get the weather for').setRequired(true)
-			)
+			builder
+				.setName(this.name)
+				.setDescription(this.description)
+				.addStringOption((option) =>
+					option.setName('location').setDescription('The location to get the weather for').setRequired(true).setAutocomplete(true)
+				)
 		);
-
 	}
 
 	public async messageRun(message: Message, args: Args) {
@@ -36,7 +38,9 @@ export class UserCommand extends Command {
 			)
 			.addFields(
 				{ name: 'Sunrise', value: new Date(result.sys.sunrise * 1000).toLocaleTimeString(), inline: true },
-				{ name: 'Sunset', value: new Date(result.sys.sunset * 1000).toLocaleTimeString(), inline: true }
+				{ name: 'Sunset', value: new Date(result.sys.sunset * 1000).toLocaleTimeString(), inline: true },
+				{ name: 'Timezone', value: `UTC${result.timezone / 3600}`, inline: true },
+				{ name: 'Country', value: result.sys.country, inline: true }
 			)
 			.setThumbnail(`http://openweathermap.org/img/wn/${result.weather[0].icon}.png`)
 			.setTimestamp();

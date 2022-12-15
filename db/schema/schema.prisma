@@ -1,0 +1,29 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:../db/data.db"
+}
+
+model guilds {
+    id       String  @id @default(cuid())
+    name     String?
+    prefix   String?
+    owner    String?
+    language String  @default("en")
+    usersId  String?
+}
+
+model users {
+    id   String  @id @default(cuid())
+    name String?
+}
+
+model bank {
+    id      String @id @default(cuid())
+    userId  String
+    bankid  String
+    balance Int
+}

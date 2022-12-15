@@ -1,4 +1,5 @@
 import { SapphireClient } from '@sapphire/framework';
+import { PrismaClient } from '@prisma/client';
 import type { ClientOptions } from 'discord.js';
 
 /**
@@ -9,6 +10,9 @@ class NeroClient extends SapphireClient {
 	constructor(option: ClientOptions) {
 		super(option);
 	}
+
+	public readonly prisma = new PrismaClient();
+
 	public async main(token: string): Promise<NeroClient> {
 		this.logger.info('Starting NeroClient...');
 		this.logger.info('Logging in');
@@ -18,5 +22,4 @@ class NeroClient extends SapphireClient {
 		return this;
 	}
 }
-
 export { NeroClient };

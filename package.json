@@ -12,6 +12,7 @@
     "url": "https://github.com/1-BOT-TEAM/1-BOT/issues"
   },
   "dependencies": {
+    "@prisma/client": "^4.7.1",
     "@sapphire/decorators": "^5.0.0",
     "@sapphire/discord-utilities": "^2.11.6",
     "@sapphire/discord.js-utilities": "^5.0.1",
@@ -38,18 +39,24 @@
     "@types/ws": "^8.5.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
+    "prisma": "^4.7.1",
     "tsc-watch": "^5.0.3",
     "typescript": "^4.8.4"
   },
   "scripts": {
     "compile": "tsc",
-    "build": "yarn run format && yarn run compile",
+    "build": "yarn run generate && yarn run format && yarn run compile",
     "watch": "tsc -w",
     "start": "node dist/index.js",
     "dev": "run-s build start",
     "watch:start": "tsc-watch --onSuccess \"node ./dist/index.js\"",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "prettier --write \"src/**/*.ts\"",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev --name init"
   },
   "prettier": "@sapphire/prettier-config",
-  "packageManager": "yarn@3.3.0"
+  "packageManager": "yarn@3.3.0",
+  "prisma": {
+    "schema": "db/schema/schema.prisma"
+  }
 }

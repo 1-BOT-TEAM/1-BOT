@@ -10,6 +10,7 @@
 
 ```sh
 yarn install
+yarn migrate
 ```
 Next Rename example.env to .env
 edit .env 
